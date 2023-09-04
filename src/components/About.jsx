@@ -9,7 +9,7 @@ const About = () => {
         </h1>
       </div>
       <div
-        className='flex flex-col justify-center items-center gap-1 bg-[#13313]
+        className='flex flex-col justify-center items-center gap-1 bg-[#181816d3]
         p-2 rounded-md '
       >
         <img
