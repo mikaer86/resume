@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import SideBar from './components/SideBar';
 import Home from './components/Home';
 import About from './components/About';
@@ -16,7 +16,7 @@ function App() {
     meta: {
       charset: 'utf-8',
       name: {
-        keywords: 'react,meta,document,html,tags',
+        keywords: 'portfolio, projects, cv, frontend',
       },
     },
   };
