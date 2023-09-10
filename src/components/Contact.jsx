@@ -64,7 +64,7 @@ const Contact = () => {
           <div className='flex flex-col py-2'>
             <label
               aria-labelledby='name'
-              className='uppercase text-sm   text-[#FCFCFC]  font-semibold p-2'
+              className='uppercase text-sm text-[#FCFCFC]  font-semibold p-2'
             >
               Name
             </label>
@@ -154,7 +154,7 @@ const Contact = () => {
             className=' text-md text-[#FCFCFC] font-semibold rounded-md p-4 mt-4 border-none bg-cyan-900'
             type='submit'
           >
-            SEND MESSAGE
+            Send Message
           </button>
         </div>
       </form>
