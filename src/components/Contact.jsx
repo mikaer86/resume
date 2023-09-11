@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const Contact = () => {
   const formValues = {
-    name: '',
+    firstname: '',
     email: '',
     phone: '',
     subject: '',
@@ -23,33 +23,30 @@ const Contact = () => {
     setSubmitted(true);
   };
 
-  useEffect(() => {
-    console.log(errors);
-    if (Object.keys(errors).length === 0 && submitted) {
-      console.log(formInput);
-    }
-  }, [errors]);
-
   const validation = (input) => {
     const errorMsg = {};
     const regex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/i;
-    if (!input.name) {
-      errorMsg.name = 'name is required!';
-    } else if (!input.email) {
-      errorMsg.email = 'email is required!';
-    } else if (!input.phone) {
-      errorMsg.phone = 'phone number is required!';
-    } else if (!input.subject) {
-      errorMsg.subject = 'subject is required!';
-    } else if (!input.message) {
-      errorMsg.email = 'message is required!';
-    } else {
-      return errorMsg;
+
+    if (!input.firstname) {
+      errorMsg.firstname = 'Name is required!';
     }
+    if (!input.email) {
+      errorMsg.email = 'Email is required!';
+    } else if (!regex.test(!input.email)) {
+      errorMsg.email = 'The Email is not valid';
+    }
+    if (!input.subject) {
+      errorMsg.subject = 'Subject is required!';
+    }
+    if (!input.message) {
+      errorMsg.email = 'Message is required!';
+    }
+
+    return errorMsg;
   };
 
   return (
-    <div className='max-w-[1040px] m-auto p-5'>
+    <div data-id='Contact' className='max-w-[1040px] m-auto p-5'>
       <h1 className='text-3xl font-semibold text-[#FCFCFC]  m-auto text-center'>
         Contact
       </h1>
@@ -68,15 +65,17 @@ const Contact = () => {
             >
               Name
             </label>
-            <p>{errors.name}</p>
+
             <input
               className='border-none rounded-md p-3 flex'
               type='text'
-              name='name'
-              value={formInput.name || ''}
+              name='firstname'
+              value={formInput.firstname || ''}
               onChange={handleForm}
-              aria-label='name'
             />
+            {errors.firstname && (
+              <p className='text-red-700'>{errors.firstname}</p>
+            )}
           </div>
 
           <div className='flex flex-col py-2'>
@@ -86,7 +85,7 @@ const Contact = () => {
             >
               Email
             </label>
-            <span>{errors.email}</span>
+
             <input
               className='border-none rounded-md p-3 flex'
               type='email'
@@ -95,6 +94,7 @@ const Contact = () => {
               onChange={handleForm}
               aria-label='email'
             />
+            {errors.email && <p className='text-red-700'>{errors.email}</p>}
           </div>
 
           <div className='flex flex-col py-2'>
@@ -105,7 +105,6 @@ const Contact = () => {
             >
               Phone Number
             </label>
-            <span>{errors.phone}</span>
             <input
               className='border-none rounded-md p-3 flex '
               type='text'
@@ -114,6 +113,7 @@ const Contact = () => {
               onChange={handleForm}
               aria-label='phone-number'
             />
+            {errors.phone && <p className='text-red-700'>{errors.phone}</p>}
           </div>
 
           <div className='flex flex-col py-2'>
@@ -123,7 +123,7 @@ const Contact = () => {
             >
               Subject
             </label>
-            <span>{errors.subject}</span>
+
             <input
               className='border-none rounded-md p-3 flex'
               type='text'
@@ -132,6 +132,7 @@ const Contact = () => {
               onChange={handleForm}
               aria-label='subject'
             />
+            {errors.subject && <p className='text-red-700'>{errors.subject}</p>}
           </div>
         </div>
         <div className='flex flex-col p-2 py-2'>
@@ -141,7 +142,7 @@ const Contact = () => {
           >
             Message
           </label>
-          <span>{errors.message}</span>
+
           <textarea
             className='border-2 rounded-md p-3'
             rows='8'
@@ -150,6 +151,7 @@ const Contact = () => {
             onChange={handleForm}
             aria-label='message'
           />
+          {errors.message && <p className='text-red-700 '>{errors.message}</p>}
           <button
             className=' text-md text-[#FCFCFC] font-semibold rounded-md p-4 mt-4 border-none bg-cyan-900'
             type='submit'
