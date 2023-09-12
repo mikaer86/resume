@@ -151,7 +151,9 @@ const Contact = () => {
             onChange={handleForm}
             aria-label='message'
           />
-          {errors.message && <p className='text-red-700 '>{errors.message}</p>}
+          {errors.message && (
+            <p className='text-red-700 font-medium '>{errors.message}</p>
+          )}
           <button
             className=' text-md text-[#FCFCFC] font-semibold rounded-md p-4 mt-4 border-none bg-cyan-900'
             type='submit'
