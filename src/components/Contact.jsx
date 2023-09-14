@@ -72,6 +72,7 @@ const Contact = () => {
               name='firstname'
               value={formInput.firstname || ''}
               onChange={handleForm}
+              aria-label='firstname'
             />
             {errors.firstname && (
               <p className='text-red-700'>{errors.firstname}</p>
@@ -142,7 +143,6 @@ const Contact = () => {
           >
             Message
           </label>
-
           <textarea
             className='border-2 rounded-md p-3'
             rows='8'
