@@ -20,10 +20,10 @@ const ProjectItem = ({ img, title }) => {
         </p>
         <div className='flex flex-row justify-center p-5'>
           <span className=' bg-yellow-600  rounded-full  font-semibold text-sm text-white m-2 p-1.5'>
-            #HTML
+            #html
           </span>
-          <span className=' bg-yellow-600  rounded-full font-semibold text-sm text-white m-2 p-1.5'>
-            #CSS
+          <span className=' bg-yellow-600 rounded-full font-semibold text-sm text-white m-2 p-1.5'>
+            #css
           </span>
           <span className=' bg-yellow-600 rounded-full font-semibold text-sm text-white m-2 p-1.5'>
             #Javascript

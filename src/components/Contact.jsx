@@ -32,7 +32,7 @@ const Contact = () => {
     }
     if (!input.email) {
       errorMsg.email = 'Email is required!';
-    } else if (!regex.test(!input.email)) {
+    } else if (!regex.test(input.email)) {
       errorMsg.email = 'The Email is not valid';
     }
     if (!input.phone) {
@@ -43,6 +43,8 @@ const Contact = () => {
     }
     if (!input.message) {
       errorMsg.message = 'Message is required!';
+    } else if (input.message.length <= 3) {
+      errorMsg.message = 'describe what i can help you with';
     }
 
     return errorMsg;
