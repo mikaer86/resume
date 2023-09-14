@@ -35,11 +35,14 @@ const Contact = () => {
     } else if (!regex.test(!input.email)) {
       errorMsg.email = 'The Email is not valid';
     }
+    if (!input.phone) {
+      errorMsg.phone = 'Phone is required!';
+    }
     if (!input.subject) {
       errorMsg.subject = 'Subject is required!';
     }
     if (!input.message) {
-      errorMsg.email = 'Message is required!';
+      errorMsg.message = 'Message is required!';
     }
 
     return errorMsg;
