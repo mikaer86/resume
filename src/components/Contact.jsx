@@ -43,8 +43,6 @@ const Contact = () => {
     }
     if (!input.message) {
       errorMsg.message = 'Message is required!';
-    } else if (input.message.length <= 3) {
-      errorMsg.message = 'describe what i can help you with';
     }
 
     return errorMsg;
