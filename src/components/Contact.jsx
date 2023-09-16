@@ -63,6 +63,7 @@ const Contact = () => {
         <div className='grid md: grid-cols-2 gap-4 w-full p-2'>
           <div className='flex flex-col py-2'>
             <label
+              htmlFor='name'
               aria-labelledby='name'
               className='uppercase text-sm text-[#FCFCFC]  font-semibold p-2'
             >
@@ -73,8 +74,10 @@ const Contact = () => {
               className='border-none rounded-md p-3 flex'
               type='text'
               name='firstname'
+              autoComplete='name'
               value={formInput.firstname || ''}
               onChange={handleForm}
+              id='name'
               aria-label='firstname'
             />
             {errors.firstname && (
@@ -84,6 +87,7 @@ const Contact = () => {
 
           <div className='flex flex-col py-2'>
             <label
+              htmlFor='email'
               aria-labelledby='email'
               className='uppercase text-sm text-[#FCFCFC] font-semibold p-2'
             >
@@ -94,8 +98,10 @@ const Contact = () => {
               className='border-none rounded-md p-3 flex'
               type='email'
               name='email'
+              autoComplete='email'
               value={formInput.email || ''}
               onChange={handleForm}
+              id='email'
               aria-label='email'
             />
             {errors.email && <p className='text-red-700'>{errors.email}</p>}
@@ -113,8 +119,10 @@ const Contact = () => {
               className='border-none rounded-md p-3 flex '
               type='text'
               name='phone'
+              autoComplete='phone'
               value={formInput.phone || ''}
               onChange={handleForm}
+              id='phone'
               aria-label='phone-number'
             />
             {errors.phone && <p className='text-red-700'>{errors.phone}</p>}
@@ -122,6 +130,7 @@ const Contact = () => {
 
           <div className='flex flex-col py-2'>
             <label
+              htmlFor='subject'
               aria-labelledby='subject'
               className='uppercase text-sm text-[#FCFCFC] font-semibold p-2'
             >
@@ -132,8 +141,10 @@ const Contact = () => {
               className='border-none rounded-md p-3 flex'
               type='text'
               name='subject'
+              autoComplete='subject'
               value={formInput.subject || ''}
               onChange={handleForm}
+              id='subject'
               aria-label='subject'
             />
             {errors.subject && <p className='text-red-700'>{errors.subject}</p>}
@@ -141,6 +152,7 @@ const Contact = () => {
         </div>
         <div className='flex flex-col p-2 py-2'>
           <label
+            htmlFor='message'
             aria-labelledby='message'
             className='uppercase text-sm text-[#FCFCFC] font-semibold p-2'
           >
@@ -149,9 +161,11 @@ const Contact = () => {
           <textarea
             className='border-2 rounded-md p-3'
             rows='8'
-            name='message:'
+            name='message'
+            autoComplete='message'
             value={formInput.message}
             onChange={handleForm}
+            id='message'
             aria-label='message'
           />
           {errors.message && (
