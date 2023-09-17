@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import SideBar from './components/SideBar';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import WorkHistory from './components/WorkHistory';
-import DocumentMeta from 'react-document-meta';
+// import DocumentMeta from 'react-document-meta';
 import './App.css';
 
 function App() {
@@ -22,7 +21,7 @@ function App() {
   };
   return (
     <div className='bg-[#030303e8]'>
-      <DocumentMeta {...meta} />
+      {/* <DocumentMeta {...meta} /> */}
       <SideBar />
       <Home />
       <About />
