@@ -8,17 +8,17 @@ import WorkHistory from './components/WorkHistory';
 import './App.css';
 
 function App() {
-  const meta = {
-    title: 'Portfolio',
-    description: 'work Portfolio for Mikael Eriksson',
-    canonical: 'https://github.com/mikaer86',
-    meta: {
-      charset: 'utf-8',
-      name: {
-        keywords: 'portfolio, projects, cv, frontend',
-      },
-    },
-  };
+  // const meta = {
+  //   title: 'Portfolio',
+  //   description: 'work Portfolio for Mikael Eriksson',
+  //   canonical: 'https://github.com/mikaer86',
+  //   meta: {
+  //     charset: 'utf-8',
+  //     name: {
+  //       keywords: 'portfolio, projects, cv, frontend',
+  //     },
+  //   },
+  // };
   return (
     <div className='bg-[#030303e8]'>
       {/* <DocumentMeta {...meta} /> */}
