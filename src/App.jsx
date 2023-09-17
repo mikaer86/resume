@@ -5,7 +5,6 @@ import Contact from './components/Contact';
 import Projects from './components/Projects';
 import WorkHistory from './components/WorkHistory';
 // import DocumentMeta from 'react-document-meta';
-import './App.css';
 
 function App() {
   // const meta = {
